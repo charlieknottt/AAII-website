@@ -23,16 +23,20 @@ export default function Navigation() {
   }, [])
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
       scrolled
-        ? 'bg-aaii-blue-950/95 backdrop-blur-md border-b border-white/10'
+        ? 'bg-aaii-blue-950/90 backdrop-blur-xl shadow-lg shadow-black/10 border-b border-white/5'
         : 'bg-transparent'
     }`}>
-      <div className="max-w-4xl mx-auto px-6">
-        <div className="flex items-center justify-between h-16">
-          <Link href="#home" className="text-white font-medium tracking-tight">
-            <span className="text-white">AA</span>
-            <span className="text-aaii-orange-500">II</span>
+      <div className="max-w-5xl mx-auto px-6">
+        <div className="flex items-center justify-between h-20">
+          <Link href="#home" className="flex items-center gap-2 group">
+            <div className="w-10 h-10 bg-gradient-to-br from-aaii-orange-500 to-aaii-orange-400 rounded-lg flex items-center justify-center group-hover:scale-105 transition-transform">
+              <span className="text-white font-bold text-sm">AI</span>
+            </div>
+            <span className="text-white font-semibold tracking-tight">
+              AA<span className="text-aaii-orange-500">II</span>
+            </span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -41,28 +45,29 @@ export default function Navigation() {
               <Link
                 key={link.name}
                 href={link.href}
-                className="text-sm text-white/60 hover:text-white"
+                className="text-sm text-white/60 hover:text-white transition-colors relative group"
               >
                 {link.name}
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-aaii-orange-500 to-aaii-blue-400 group-hover:w-full transition-all duration-300" />
               </Link>
             ))}
             <Link
               href="#involved"
-              className="px-4 py-2 bg-aaii-orange-500 hover:bg-aaii-orange-400 text-white text-sm font-medium rounded-lg"
+              className="px-5 py-2.5 bg-gradient-to-r from-aaii-orange-500 to-aaii-orange-400 hover:from-aaii-orange-400 hover:to-aaii-orange-300 text-white text-sm font-semibold rounded-lg transition-all duration-300 hover:scale-105 shadow-lg shadow-aaii-orange-500/20"
             >
-              Join
+              Get Involved
             </Link>
           </div>
 
           {/* Mobile menu button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-2 text-white/60 hover:text-white"
+            className="md:hidden p-2 text-white/60 hover:text-white rounded-lg hover:bg-white/5 transition-colors"
           >
-            <div className="w-5 h-4 relative flex flex-col justify-between">
-              <span className={`w-full h-0.5 bg-current transition-all duration-300 ${isOpen ? 'rotate-45 translate-y-1.5' : ''}`} />
-              <span className={`w-full h-0.5 bg-current transition-all duration-300 ${isOpen ? 'opacity-0' : ''}`} />
-              <span className={`w-full h-0.5 bg-current transition-all duration-300 ${isOpen ? '-rotate-45 -translate-y-1.5' : ''}`} />
+            <div className="w-6 h-5 relative flex flex-col justify-between">
+              <span className={`w-full h-0.5 bg-current rounded-full transition-all duration-300 ${isOpen ? 'rotate-45 translate-y-2' : ''}`} />
+              <span className={`w-full h-0.5 bg-current rounded-full transition-all duration-300 ${isOpen ? 'opacity-0' : ''}`} />
+              <span className={`w-full h-0.5 bg-current rounded-full transition-all duration-300 ${isOpen ? '-rotate-45 -translate-y-2' : ''}`} />
             </div>
           </button>
         </div>
@@ -70,16 +75,16 @@ export default function Navigation() {
 
       {/* Mobile Navigation */}
       <div className={`md:hidden overflow-hidden transition-all duration-300 ${
-        isOpen ? 'max-h-64' : 'max-h-0'
+        isOpen ? 'max-h-80' : 'max-h-0'
       }`}>
-        <div className="bg-aaii-blue-950/98 backdrop-blur-md border-t border-white/10">
-          <div className="px-6 py-4 space-y-3">
+        <div className="bg-aaii-blue-950/95 backdrop-blur-xl border-t border-white/5">
+          <div className="px-6 py-4 space-y-2">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
                 href={link.href}
                 onClick={() => setIsOpen(false)}
-                className="block text-white/60 hover:text-white py-2"
+                className="block text-white/70 hover:text-white py-3 px-4 rounded-lg hover:bg-white/5 transition-colors"
               >
                 {link.name}
               </Link>
@@ -87,9 +92,9 @@ export default function Navigation() {
             <Link
               href="#involved"
               onClick={() => setIsOpen(false)}
-              className="block w-full py-3 bg-aaii-orange-500 text-white text-center font-medium rounded-lg mt-4"
+              className="block w-full py-3 px-4 bg-gradient-to-r from-aaii-orange-500 to-aaii-orange-400 text-white text-center font-semibold rounded-lg mt-4"
             >
-              Join
+              Get Involved
             </Link>
           </div>
         </div>

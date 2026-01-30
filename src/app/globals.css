@@ -5,8 +5,8 @@
 :root {
   --foreground-rgb: 255, 255, 255;
   --background-start: #001a2e;
-  --background-mid: #003052;
-  --background-end: #004a7c;
+  --background-mid: #002a4a;
+  --background-end: #003a66;
   --accent-orange: #ff5722;
   --accent-blue: #33b5f5;
 }
@@ -20,7 +20,7 @@ body {
   background: linear-gradient(
     180deg,
     var(--background-start) 0%,
-    var(--background-mid) 40%,
+    var(--background-mid) 50%,
     var(--background-end) 100%
   );
   background-attachment: fixed;
@@ -48,12 +48,12 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(51, 181, 245, 0.3);
+  background: linear-gradient(180deg, rgba(255, 87, 34, 0.5), rgba(51, 181, 245, 0.5));
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(51, 181, 245, 0.5);
+  background: linear-gradient(180deg, rgba(255, 87, 34, 0.7), rgba(51, 181, 245, 0.7));
 }
 
 /* Selection */
@@ -67,40 +67,32 @@ a, button {
   @apply transition-all duration-300;
 }
 
-/* Section dividers */
-.section-divider {
-  height: 1px;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.1) 20%,
-    rgba(255, 255, 255, 0.1) 80%,
-    transparent
-  );
-}
-
-/* Photo slideshow */
-.slideshow-container {
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-}
-
-.slideshow-track {
-  display: flex;
-  transition: transform 0.5s ease-in-out;
-}
-
-.slideshow-slide {
-  flex: 0 0 100%;
-  width: 100%;
-}
-
+/* Animations */
 @keyframes fade-in {
-  from { opacity: 0; transform: translateY(10px); }
+  from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
 }
 
 .animate-fade-in {
   animation: fade-in 0.6s ease-out forwards;
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Smooth hover transitions for cards */
+.group:hover .group-hover\:scale-110 {
+  transform: scale(1.1);
+}
+
+/* Focus styles */
+*:focus-visible {
+  outline: 2px solid rgba(255, 87, 34, 0.5);
+  outline-offset: 2px;
 }
