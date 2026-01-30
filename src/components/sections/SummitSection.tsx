@@ -309,7 +309,7 @@ export default function SummitSection() {
             {/* Recap Stats */}
             <div className="grid grid-cols-3 gap-4 text-center">
               <div className="bg-white/5 rounded-xl p-6">
-                <p className="text-3xl font-bold text-gradient mb-1">100+</p>
+                <p className="text-3xl font-bold text-gradient mb-1">300+</p>
                 <p className="text-white/50 text-sm">Attendees</p>
               </div>
               <div className="bg-white/5 rounded-xl p-6">
@@ -329,7 +329,7 @@ export default function SummitSection() {
               </span>
               <h3 className="text-2xl font-bold text-white mb-4">First Annual AI Summit</h3>
               <p className="text-white/60 max-w-2xl mx-auto">
-                Our inaugural summit brought together students, faculty, and industry leaders for an evening
+                Our inaugural summit brought together over 300 students, faculty, and industry leaders for an evening
                 of insight and connection. Speakers from Apple, AWS, and Synovus shared perspectives on
                 responsible AI development and innovation.
               </p>
