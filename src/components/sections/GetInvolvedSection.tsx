@@ -38,7 +38,7 @@ export default function GetInvolvedSection() {
             Get <span className="text-gradient">Involved</span>
           </h2>
           <p className="text-white/50 max-w-xl mx-auto">
-            No experience required—just curiosity and enthusiasm.
+            No experience required. Just curiosity and enthusiasm.
           </p>
         </div>
 
