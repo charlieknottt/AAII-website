@@ -5,8 +5,8 @@ import Link from 'next/link'
 
 const navLinks = [
   { name: 'About', href: '#about' },
-  { name: 'Meetings', href: '#meetings' },
   { name: 'Annual Summit', href: '#summit' },
+  { name: 'Meetings', href: '#meetings' },
   { name: 'Leadership', href: '#leadership' },
 ]
 
