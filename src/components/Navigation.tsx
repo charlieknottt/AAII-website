@@ -6,7 +6,7 @@ import Link from 'next/link'
 const navLinks = [
   { name: 'About', href: '#about' },
   { name: 'Meetings', href: '#meetings' },
-  { name: 'Summit', href: '#summit' },
+  { name: 'Annual Summit', href: '#summit' },
   { name: 'Leadership', href: '#leadership' },
 ]
 
@@ -30,12 +30,9 @@ export default function Navigation() {
     }`}>
       <div className="max-w-5xl mx-auto px-6">
         <div className="flex items-center justify-between h-20">
-          <Link href="#home" className="flex items-center gap-2 group">
-            <div className="w-10 h-10 bg-gradient-to-br from-aaii-orange-500 to-aaii-orange-400 rounded-lg flex items-center justify-center group-hover:scale-105 transition-transform">
-              <span className="text-white font-bold text-sm">AI</span>
-            </div>
-            <span className="text-white font-semibold tracking-tight">
-              AA<span className="text-aaii-orange-500">II</span>
+          <Link href="#home" className="group">
+            <span className="text-xl font-bold tracking-tight">
+              <span className="text-white group-hover:text-white/90 transition-colors">AA</span><span className="text-gradient">II</span>
             </span>
           </Link>
 

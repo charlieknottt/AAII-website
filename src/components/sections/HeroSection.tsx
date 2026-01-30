@@ -61,13 +61,6 @@ export default function HeroSection() {
           </Link>
         </div>
 
-        {/* Scroll indicator */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/30">
-          <span className="text-xs uppercase tracking-widest">Scroll</span>
-          <div className="w-6 h-10 border-2 border-white/20 rounded-full flex justify-center pt-2">
-            <div className="w-1 h-2 bg-white/40 rounded-full animate-bounce" />
-          </div>
-        </div>
       </div>
     </section>
   )
