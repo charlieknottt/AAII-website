@@ -98,18 +98,53 @@ export default function SponsorSection() {
           </div>
         </div>
 
-        {/* Past Sponsors */}
+        {/* Past Sponsors & Speakers */}
         <div className="mb-20">
-          <h3 className="text-2xl font-bold text-white mb-8 text-center">Past Summit Sponsors & Speakers</h3>
-          <div className="flex flex-wrap justify-center gap-8">
-            {['AWS', 'Apple', 'Synovus'].map((company) => (
-              <div
-                key={company}
-                className="px-8 py-4 bg-white/5 rounded-xl border border-white/10 hover:border-white/20 transition-colors"
-              >
-                <span className="text-white/70 font-semibold text-lg">{company}</span>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* Sponsors */}
+            <div>
+              <h3 className="text-xl font-bold text-white mb-6 text-center">Past Sponsors</h3>
+              <div className="flex flex-wrap justify-center gap-6">
+                {[
+                  { name: 'AI@AU', logo: '/aiau-logo.png' },
+                  { name: 'Biggio Center', logo: '/biggio-logo.png' },
+                ].map((sponsor) => (
+                  <div
+                    key={sponsor.name}
+                    className="px-6 py-4 bg-white/5 rounded-xl border border-white/10 hover:border-aaii-orange-500/30 transition-all hover:scale-105"
+                  >
+                    <img
+                      src={sponsor.logo}
+                      alt={sponsor.name}
+                      className="h-12 w-auto object-contain filter brightness-0 invert opacity-80 hover:opacity-100 transition-opacity"
+                    />
+                  </div>
+                ))}
               </div>
-            ))}
+            </div>
+
+            {/* Speakers */}
+            <div>
+              <h3 className="text-xl font-bold text-white mb-6 text-center">Past Speakers</h3>
+              <div className="flex flex-wrap justify-center gap-6">
+                {[
+                  { name: 'Apple', logo: '/apple-logo.png' },
+                  { name: 'AWS', logo: '/aws-logo.png' },
+                  { name: 'Synovus', logo: '/synovus-logo.png' },
+                ].map((speaker) => (
+                  <div
+                    key={speaker.name}
+                    className="px-6 py-4 bg-white/5 rounded-xl border border-white/10 hover:border-aaii-blue-400/30 transition-all hover:scale-105"
+                  >
+                    <img
+                      src={speaker.logo}
+                      alt={speaker.name}
+                      className="h-12 w-auto object-contain filter brightness-0 invert opacity-80 hover:opacity-100 transition-opacity"
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
 
