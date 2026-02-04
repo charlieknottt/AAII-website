@@ -104,10 +104,10 @@ export default function SponsorSection() {
             {/* Sponsors */}
             <div>
               <h3 className="text-xl font-bold text-white mb-6 text-center">Past Sponsors</h3>
-              <div className="flex flex-wrap justify-center gap-6">
+              <div className="flex flex-wrap justify-center items-center gap-6">
                 {[
-                  { name: 'AI@AU', logo: '/aiau-logo.png' },
-                  { name: 'Biggio Center', logo: '/biggio-logo.png' },
+                  { name: 'Biggio Center', logo: '/biggio-logo.png', height: 'h-20' },
+                  { name: 'AI@AU', logo: '/aiau-logo.png', height: 'h-20' },
                 ].map((sponsor) => (
                   <div
                     key={sponsor.name}
@@ -116,7 +116,7 @@ export default function SponsorSection() {
                     <img
                       src={sponsor.logo}
                       alt={sponsor.name}
-                      className="h-12 w-auto object-contain filter brightness-0 invert opacity-80 hover:opacity-100 transition-opacity"
+                      className={`${sponsor.height} w-auto object-contain filter brightness-0 invert opacity-80 hover:opacity-100 transition-opacity`}
                     />
                   </div>
                 ))}
@@ -126,11 +126,11 @@ export default function SponsorSection() {
             {/* Speakers */}
             <div>
               <h3 className="text-xl font-bold text-white mb-6 text-center">Past Speakers</h3>
-              <div className="flex flex-wrap justify-center gap-6">
+              <div className="flex flex-wrap justify-center items-center gap-6">
                 {[
-                  { name: 'Apple', logo: '/apple-logo.png' },
-                  { name: 'AWS', logo: '/aws-logo.png' },
-                  { name: 'Synovus', logo: '/synovus-logo.png' },
+                  { name: 'Apple', logo: '/apple-logo.png', height: 'h-12', maxWidth: '' },
+                  { name: 'AWS', logo: '/aws-logo.png', height: 'h-12', maxWidth: '' },
+                  { name: 'Synovus', logo: '/synovus-logo.png', height: 'h-5', maxWidth: 'max-w-[120px]' },
                 ].map((speaker) => (
                   <div
                     key={speaker.name}
@@ -139,7 +139,7 @@ export default function SponsorSection() {
                     <img
                       src={speaker.logo}
                       alt={speaker.name}
-                      className="h-12 w-auto object-contain filter brightness-0 invert opacity-80 hover:opacity-100 transition-opacity"
+                      className={`${speaker.height} ${speaker.maxWidth} w-auto object-contain filter brightness-0 invert opacity-80 hover:opacity-100 transition-opacity`}
                     />
                   </div>
                 ))}
