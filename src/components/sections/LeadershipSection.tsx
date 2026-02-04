@@ -101,61 +101,40 @@ export default function LeadershipSection() {
           </div>
         </div>
 
-        {/* Partners Section */}
-        <div className="relative">
-          <div className="absolute -inset-1 bg-gradient-to-r from-aaii-blue-500/20 via-aaii-orange-500/20 to-aaii-blue-500/20 rounded-2xl blur-xl" />
-          <div className="relative bg-white/5 backdrop-blur-sm rounded-xl p-10 border border-white/10">
-            <div className="text-center mb-8">
-              <h3 className="text-2xl font-bold text-white mb-2">Our Partners</h3>
-              <p className="text-white/50">
-                We're grateful for the organizations that make our mission possible.
+        {/* A Special Thanks To */}
+        <div>
+          <h3 className="text-xl font-semibold text-white mb-6 text-center">A Special Thanks To</h3>
+          <a
+            href="https://biggio.auburn.edu/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block max-w-2xl mx-auto group"
+          >
+            <div className="bg-gradient-to-r from-aaii-orange-500/10 via-aaii-blue-500/10 to-aaii-orange-500/10 rounded-xl p-6 border border-white/10 hover:border-aaii-orange-500/30 transition-all duration-300">
+              <div className="flex items-center justify-between mb-4">
+                <div className="flex items-center gap-4">
+                  <div className="w-14 h-14 bg-gradient-to-br from-aaii-orange-500/30 to-aaii-blue-500/30 rounded-xl flex items-center justify-center">
+                    <span className="text-white font-bold">BC</span>
+                  </div>
+                  <div>
+                    <h4 className="text-white font-semibold text-lg group-hover:text-aaii-orange-400 transition-colors">
+                      Biggio Center
+                    </h4>
+                    <p className="text-white/50 text-sm">Founding Partner</p>
+                  </div>
+                </div>
+                <svg className="w-5 h-5 text-white/30 group-hover:text-aaii-orange-400 group-hover:translate-x-1 transition-all" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+              </div>
+              <p className="text-white/60 text-sm leading-relaxed">
+                The Biggio Center for the Enhancement of Teaching and Learning has been instrumental in supporting AAII's growth.
+                Their commitment to innovative education and student success has helped us build meaningful connections
+                between Auburn students and the rapidly evolving world of artificial intelligence. We're deeply grateful
+                for their continued partnership and guidance.
               </p>
             </div>
-
-            {/* Biggio Center Feature */}
-            <a
-              href="https://biggio.auburn.edu/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block mb-8 group"
-            >
-              <div className="bg-gradient-to-r from-aaii-orange-500/10 via-aaii-blue-500/10 to-aaii-orange-500/10 rounded-xl p-6 border border-white/10 hover:border-aaii-orange-500/30 transition-all duration-300">
-                <div className="flex items-center justify-between mb-4">
-                  <div className="flex items-center gap-4">
-                    <div className="w-14 h-14 bg-gradient-to-br from-aaii-orange-500/30 to-aaii-blue-500/30 rounded-xl flex items-center justify-center">
-                      <span className="text-white font-bold">BC</span>
-                    </div>
-                    <div>
-                      <h4 className="text-white font-semibold text-lg group-hover:text-aaii-orange-400 transition-colors">
-                        Biggio Center
-                      </h4>
-                      <p className="text-white/50 text-sm">Primary Academic Partner</p>
-                    </div>
-                  </div>
-                  <svg className="w-5 h-5 text-white/30 group-hover:text-aaii-orange-400 group-hover:translate-x-1 transition-all" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                  </svg>
-                </div>
-                <p className="text-white/60 text-sm leading-relaxed">
-                  The Biggio Center for the Enhancement of Teaching and Learning has been instrumental in supporting AAII's growth.
-                  Their commitment to innovative education and student success has helped us build meaningful connections
-                  between Auburn students and the rapidly evolving world of artificial intelligence. We're deeply grateful
-                  for their continued partnership and guidance.
-                </p>
-              </div>
-            </a>
-
-            {/* Other Partners */}
-            <div className="flex items-center gap-4 p-4 bg-white/5 rounded-lg max-w-md mx-auto">
-              <div className="w-12 h-12 bg-aaii-orange-500/20 rounded-lg flex items-center justify-center">
-                <span className="text-aaii-orange-400 font-semibold text-xs">AU</span>
-              </div>
-              <div>
-                <p className="text-white font-medium">Auburn University</p>
-                <p className="text-white/50 text-sm">Home Institution</p>
-              </div>
-            </div>
-          </div>
+          </a>
         </div>
 
       </div>
