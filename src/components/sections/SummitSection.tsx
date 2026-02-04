@@ -132,10 +132,10 @@ export default function SummitSection() {
   return (
     <section id="summit" className="py-24 relative overflow-hidden">
       {/* Background decoration */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-aaii-orange-500/10 rounded-full blur-3xl" />
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-aaii-blue-400/10 rounded-full blur-3xl" />
+      <div className="absolute top-0 right-0 w-96 h-96 bg-aaii-orange-500/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-aaii-blue-400/10 rounded-full blur-3xl pointer-events-none" />
 
-      <div className="max-w-5xl mx-auto px-6 relative">
+      <div className="max-w-5xl mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
           <span className="inline-block px-4 py-1 bg-aaii-orange-500/20 text-aaii-orange-400 text-sm font-medium rounded-full mb-4">
             Flagship Event
@@ -149,7 +149,7 @@ export default function SummitSection() {
         </div>
 
         {/* Tab Navigation */}
-        <div className="flex justify-center mb-12">
+        <div className="flex justify-center mb-8">
           <div className="inline-flex bg-white/5 backdrop-blur-sm rounded-full p-1.5">
             <button
               onClick={() => setActiveTab('upcoming')}
@@ -174,127 +174,47 @@ export default function SummitSection() {
           </div>
         </div>
 
-        {/* 2025 Summit */}
+        {/* Recap call-out */}
         {activeTab === 'upcoming' && (
-          <div className="animate-fade-in space-y-12">
+          <div className="text-center mb-12">
+            <button
+              onClick={() => setActiveTab('recap')}
+              className="inline-flex items-center gap-2 text-white/50 hover:text-aaii-orange-400 transition-colors group"
+            >
+              <span className="w-2 h-2 bg-aaii-orange-500 rounded-full animate-pulse" />
+              <span>See highlights from our 2025 Summit with 300+ attendees</span>
+              <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+          </div>
+        )}
+
+        {/* 2026 Summit */}
+        {activeTab === 'upcoming' && (
+          <div className="animate-fade-in">
             {/* Hero Card */}
             <div className="relative bg-gradient-to-br from-aaii-orange-500/20 via-aaii-blue-500/10 to-aaii-blue-600/20 rounded-2xl p-1">
-              <div className="bg-aaii-blue-950/80 backdrop-blur-sm rounded-xl p-8 md:p-12">
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-10">
-                  <div className="text-center">
-                    <div className="w-14 h-14 bg-aaii-orange-500/20 rounded-xl flex items-center justify-center mx-auto mb-3">
-                      <svg className="w-7 h-7 text-aaii-orange-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                      </svg>
-                    </div>
-                    <p className="text-white/50 text-xs uppercase tracking-wide mb-1">Date</p>
-                    <p className="text-white font-semibold">April 2026</p>
-                  </div>
-                  <div className="text-center">
-                    <div className="w-14 h-14 bg-aaii-blue-400/20 rounded-xl flex items-center justify-center mx-auto mb-3">
-                      <svg className="w-7 h-7 text-aaii-blue-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                      </svg>
-                    </div>
-                    <p className="text-white/50 text-xs uppercase tracking-wide mb-1">Time</p>
-                    <p className="text-white font-semibold">5:00 - 8:30 PM</p>
-                  </div>
-                  <div className="text-center">
-                    <div className="w-14 h-14 bg-aaii-blue-500/20 rounded-xl flex items-center justify-center mx-auto mb-3">
-                      <svg className="w-7 h-7 text-aaii-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                      </svg>
-                    </div>
-                    <p className="text-white/50 text-xs uppercase tracking-wide mb-1">Venue</p>
-                    <p className="text-white font-semibold">Auburn Hotel</p>
-                  </div>
-                  <div className="text-center">
-                    <div className="w-14 h-14 bg-green-500/20 rounded-xl flex items-center justify-center mx-auto mb-3">
-                      <svg className="w-7 h-7 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M5 13l4 4L19 7" />
-                      </svg>
-                    </div>
-                    <p className="text-white/50 text-xs uppercase tracking-wide mb-1">Admission</p>
-                    <p className="text-white font-semibold">Free Entry</p>
-                  </div>
+              <div className="bg-aaii-blue-950/80 backdrop-blur-sm rounded-xl p-8 md:p-12 text-center">
+                <div className="mb-6">
+                  <p className="text-white/50 text-sm uppercase tracking-wide mb-2">Presented by</p>
+                  <p className="text-2xl font-bold text-gradient">The Biggio Center</p>
                 </div>
 
-                <div className="text-center">
-                  <a
-                    href="https://auburn.qualtrics.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-10 py-4 bg-gradient-to-r from-aaii-orange-500 to-aaii-orange-400 hover:from-aaii-orange-400 hover:to-aaii-orange-300 text-white font-bold rounded-xl transition-all duration-300 hover:scale-105 shadow-lg shadow-aaii-orange-500/25"
-                  >
-                    Reserve Your Spot
-                    <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                    </svg>
-                  </a>
-                  <p className="text-white/40 text-sm mt-4">Limited seats available. Appetizers & refreshments provided.</p>
+                <h3 className="text-3xl md:text-4xl font-bold text-white mb-6">
+                  2026 AI Summit
+                </h3>
+
+                <p className="text-white/60 text-lg mb-8 max-w-xl mx-auto">
+                  Details coming soon. Stay tuned for information about speakers, schedule, and registration.
+                </p>
+
+                <div className="inline-flex items-center gap-2 px-6 py-3 bg-white/10 text-white/70 rounded-xl">
+                  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  More information coming soon
                 </div>
-              </div>
-            </div>
-
-            {/* Schedule Preview */}
-            <div>
-              <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-3">
-                <span className="w-8 h-1 bg-gradient-to-r from-aaii-orange-500 to-aaii-blue-400 rounded-full" />
-                Event Schedule
-              </h3>
-              <div className="grid gap-3">
-                {[
-                  { time: '5:00 PM', title: 'Networking & Appetizers', highlight: true },
-                  { time: '5:30 PM', title: 'Opening Keynote' },
-                  { time: '6:00 PM', title: 'Industry Speaker Panel' },
-                  { time: '7:15 PM', title: 'Interactive Q&A Session' },
-                  { time: '8:00 PM', title: 'Closing & Extended Networking', highlight: true },
-                ].map((item, index) => (
-                  <div
-                    key={index}
-                    className={`flex items-center gap-6 p-4 rounded-lg transition-all duration-300 hover:bg-white/5 ${
-                      item.highlight ? 'bg-white/5' : ''
-                    }`}
-                  >
-                    <span className="text-aaii-orange-400 font-mono font-semibold w-20">{item.time}</span>
-                    <span className="w-2 h-2 bg-gradient-to-r from-aaii-orange-500 to-aaii-blue-400 rounded-full" />
-                    <span className="text-white">{item.title}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Featured Speakers Preview */}
-            <div>
-              <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-3">
-                <span className="w-8 h-1 bg-gradient-to-r from-aaii-orange-500 to-aaii-blue-400 rounded-full" />
-                Confirmed Speakers
-              </h3>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                {[
-                  { company: 'Tech Industry Leader', role: 'Keynote Speaker', color: 'from-aaii-orange-500/20 to-aaii-orange-600/10' },
-                  { company: 'AI Research Expert', role: 'Panel Speaker', color: 'from-aaii-blue-400/20 to-aaii-blue-500/10' },
-                  { company: 'More Speakers', role: 'To Be Announced', color: 'from-aaii-blue-500/20 to-aaii-blue-600/10' },
-                ].map((speaker, index) => (
-                  <div key={index} className={`bg-gradient-to-br ${speaker.color} rounded-xl p-6 border border-white/5`}>
-                    <p className="text-white font-semibold mb-1">{speaker.company}</p>
-                    <p className="text-white/50 text-sm">{speaker.role}</p>
-                  </div>
-                ))}
-              </div>
-              <p className="text-white/40 text-sm text-center mt-4">Full speaker lineup to be announced soon</p>
-            </div>
-
-            {/* Partners */}
-            <div className="text-center pt-8 border-t border-white/10">
-              <p className="text-white/40 text-sm mb-4">In partnership with</p>
-              <div className="flex flex-wrap justify-center gap-6">
-                {['Biggio Center', 'Auburn University'].map((partner) => (
-                  <span key={partner} className="px-4 py-2 bg-white/5 rounded-lg text-white/70 text-sm">
-                    {partner}
-                  </span>
-                ))}
               </div>
             </div>
           </div>

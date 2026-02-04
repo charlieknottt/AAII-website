@@ -4,7 +4,7 @@ export default function MeetingsSection() {
     'Hands-on tool workshops',
     'Ethics and societal impact',
     'Career preparation',
-    'Technical deep dives',
+    'Technical overviews',
     'Networking opportunities',
   ]
 
@@ -65,7 +65,7 @@ export default function MeetingsSection() {
         </div>
 
         {/* What we cover */}
-        <div>
+        <div className="mb-12">
           <h3 className="text-xl font-semibold text-white mb-6 flex items-center gap-3">
             <span className="w-8 h-1 bg-gradient-to-r from-aaii-orange-500 to-aaii-blue-400 rounded-full" />
             What We Cover
@@ -81,6 +81,22 @@ export default function MeetingsSection() {
               </div>
             ))}
           </div>
+        </div>
+
+        {/* Join GroupMe */}
+        <div className="text-center">
+          <p className="text-white/50 mb-4">Stay updated on meeting times and announcements</p>
+          <a
+            href="https://groupme.com/join_group/95925542/ioWC1jZS"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-4 px-12 py-5 bg-gradient-to-r from-aaii-blue-500 to-aaii-blue-400 hover:from-aaii-blue-400 hover:to-aaii-blue-300 text-white text-xl font-bold rounded-2xl transition-all duration-300 hover:scale-105 shadow-xl shadow-aaii-blue-500/30"
+          >
+            <svg className="w-7 h-7" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+            </svg>
+            Join GroupMe
+          </a>
         </div>
       </div>
     </section>

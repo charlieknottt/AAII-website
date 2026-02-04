@@ -7,6 +7,7 @@ const navLinks = [
   { name: 'About', href: '#about' },
   { name: 'Annual Summit', href: '#summit' },
   { name: 'Meetings', href: '#meetings' },
+  { name: 'Sponsors', href: '#sponsors' },
   { name: 'Leadership', href: '#leadership' },
 ]
 

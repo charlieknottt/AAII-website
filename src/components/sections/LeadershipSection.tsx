@@ -1,8 +1,18 @@
 const leaders = [
   {
     name: 'Allison Fullwood',
-    role: 'President',
-    phone: '(703) 244-7708',
+    role: 'President & Co-Founder',
+    linkedin: 'https://www.linkedin.com/in/allisonfullwood18/',
+    image: '/allison-headshot.png',
+  },
+]
+
+const boardAdvisors = [
+  {
+    name: 'Charlie Knott',
+    role: 'Board Chair, Former President & Founder',
+    linkedin: 'https://www.linkedin.com/in/charlieknott/',
+    image: '/charlie-headshot.png',
   },
 ]
 
@@ -27,30 +37,68 @@ export default function LeadershipSection() {
         </div>
 
         {/* Leaders */}
-        <div className="flex justify-center mb-20">
+        <div className="flex justify-center mb-16">
           {leaders.map((leader) => (
             <div
               key={leader.name}
               className="group relative bg-white/5 hover:bg-white/10 backdrop-blur-sm rounded-xl p-8 text-center border border-white/5 hover:border-aaii-orange-500/30 transition-all duration-300"
             >
-              <div className="w-20 h-20 bg-gradient-to-br from-aaii-orange-500 to-aaii-orange-400 rounded-full flex items-center justify-center mx-auto mb-5 group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-aaii-orange-500/20">
-                <span className="text-white font-bold text-xl">
-                  {leader.name.split(' ').map(n => n[0]).join('')}
-                </span>
+              <div className="w-24 h-24 rounded-full mx-auto mb-5 group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-aaii-orange-500/20 overflow-hidden ring-2 ring-aaii-orange-500/30">
+                <img
+                  src={leader.image}
+                  alt={leader.name}
+                  className="w-full h-full object-cover"
+                />
               </div>
               <h3 className="text-white font-semibold text-lg">{leader.name}</h3>
               <p className="text-aaii-orange-400 text-sm mb-4">{leader.role}</p>
               <a
-                href={`tel:${leader.phone.replace(/[^0-9]/g, '')}`}
+                href={leader.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 text-white/50 hover:text-aaii-blue-300 text-sm transition-colors"
               >
-                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
                 </svg>
-                {leader.phone}
+                LinkedIn
               </a>
             </div>
           ))}
+        </div>
+
+        {/* Board of Advisors */}
+        <div className="mb-20">
+          <h3 className="text-xl font-semibold text-white mb-6 text-center">Board of Advisors</h3>
+          <div className="flex justify-center">
+            {boardAdvisors.map((advisor) => (
+              <div
+                key={advisor.name}
+                className="group relative bg-white/5 hover:bg-white/10 backdrop-blur-sm rounded-xl p-6 text-center border border-white/5 hover:border-aaii-blue-400/30 transition-all duration-300"
+              >
+                <div className="w-20 h-20 rounded-full mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-aaii-blue-500/20 overflow-hidden ring-2 ring-aaii-blue-400/30">
+                  <img
+                    src={advisor.image}
+                    alt={advisor.name}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <h3 className="text-white font-semibold">{advisor.name}</h3>
+                <p className="text-aaii-blue-300 text-sm mb-3">{advisor.role}</p>
+                <a
+                  href={advisor.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-white/50 hover:text-aaii-blue-300 text-sm transition-colors"
+                >
+                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                  </svg>
+                  LinkedIn
+                </a>
+              </div>
+            ))}
+          </div>
         </div>
 
         {/* Partners Section */}
@@ -109,6 +157,7 @@ export default function LeadershipSection() {
             </div>
           </div>
         </div>
+
       </div>
     </section>
   )
