@@ -2,6 +2,8 @@
 
 Auburn Artificial Intelligence Initiative website built with Next.js, TypeScript, and Tailwind CSS.
 
+**Live site:** https://aaii-website.vercel.app
+
 ## Getting Started
 
 ### Prerequisites
